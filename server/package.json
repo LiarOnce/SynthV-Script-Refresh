@@ -1,0 +1,19 @@
+{
+	"name": "synthv-helper-refresh-server",
+	"description": "Synthesizer V Script Helper Refresh language server protocol - server.",
+	"version": "0.1.1",
+	"author": "LiarOnce",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LiarOnce/SynthV-Script-Refresh"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^8.1.0",
+		"vscode-languageserver-textdocument": "^1.0.1"
+	},
+	"scripts": {}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "synthv-helper-refresh-client",
+	"description": "Synthesizer V Script Helper Refresh language server protocol - client.",
+	"author": "LiarOnce",
+	"license": "MIT",
+	"version": "0.1.1",
+	"publisher": "LiarOnce",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LiarOnce/SynthV-Script-Refresh"
+	},
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^8.1.0"
+	},
+	"devDependencies": {
+		"@types/vscode": "1.75.0"
+	}
+}
