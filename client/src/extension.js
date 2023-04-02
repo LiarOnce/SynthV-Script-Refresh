@@ -8,7 +8,7 @@ let client;
 
 console.log('client')
 function activate(context) {
-    let serverModule = context.asAbsolutePath(path.join('server', 'src', 'server.js'));
+    let serverModule = context.asAbsolutePath(path.join('server', 'out', 'server.js'));
     let debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
     let serverOptions = {
         // 运行时参数
@@ -26,7 +26,7 @@ function activate(context) {
     let clientOptions = {
         documentSelector: [
             // 为 JS 和 Lua 注册语言服务器
-            { scheme: 'file', language: 'js' },
+            { scheme: 'file', language: 'javascript' },
             { scheme: 'file', language: 'lua' }
         ],
         synchronize: {
@@ -35,7 +35,12 @@ function activate(context) {
         }
     };
     // 创建客户端
-    client = new LanguageClient('languageServerExample', 'Language Server Example', serverOptions, clientOptions);
+    client = new LanguageClient(
+        'SynthesizerVLanguageServer',
+        'Synthesizer V Language Server',
+        serverOptions,
+        clientOptions
+    );
     // 启动
     client.start();
 }

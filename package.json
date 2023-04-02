@@ -1,36 +1,54 @@
 {
-	"name": "synthv-helper-refresh-pack",
-	"description": "Synthesizer V Script Helper Refresh language server pack.",
-	"author": "LiarOnce",
-	"license": "MIT",
-	"version": "0.1.1",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/LiarOnce/SynthV-Script-Refresh"
-	},
-	"publisher": "LiarOnce",
-	"categories": [],
-	"keywords": [
-		"SynthV",
-		"Synthesizer V"
-	],
-	"icon": "assets/svcoding.png",
-	"engines": {
-		"vscode": "^1.75.0"
-	},
-	"activationEvents": [
-		"onLanguage:javascript",
-		"onLanguage:lua"
-	],
-	"main": "./client/src/extension",
-	"contributes": {
-	},
-	"scripts": {
-	},
-	"devDependencies": {
-		"@types/mocha": "^10.0.0",
-		"mocha": "^10.2.0",
-		"@types/node": "^18.14.0",
-		"eslint": "^8.37.0"
-	}
+    "name": "synthv-helper-refresh-pack",
+    "description": "Synthesizer V Script Helper Refresh language server pack.",
+    "author": "LiarOnce",
+    "license": "MIT",
+    "version": "0.1.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LiarOnce/SynthV-Script-Refresh"
+    },
+    "publisher": "LiarOnce",
+    "categories": [],
+    "keywords": [
+        "SynthV",
+        "Synthesizer V"
+    ],
+    "icon": "assets/svcoding.png",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "activationEvents": [
+        "onLanguage:javascript",
+        "onLanguage:lua",
+        "onLanguage:plaintext"
+    ],
+    "main": "./client/src/extension",
+    "contributes": {},
+    "scripts": {
+        "vscode:prepublish": "pnpm run compile",
+        "compile": "tsc -b",
+        "watch": "tsc -b -w"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.0",
+        "@types/node": "^18.14.0",
+        "@typescript-eslint/eslint-plugin": "^5.57.0",
+		"@typescript-eslint/parser": "^5.57.0",
+        "eslint": "^8.37.0",
+        "mocha": "^10.2.0",
+        "typescript": "^5.0.3"
+    },
+    "workspaces": [
+        "client",
+        "server"
+    ],
+    "syncpack": {
+        "workspace": false,
+        "source": [
+            "package.json",
+            "client/package.json",
+            "server/package.json"
+        ]
+    }
 }
